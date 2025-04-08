@@ -1,93 +1,137 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #2c3e50, #4ca1af);
+  min-height: 100vh;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+}
+/* Navigation bar */
 nav {
-    background-color: #333333;
-    padding: 10px;
-  }
-  
-  nav a {
-    color: rgb(40, 255, 137);
-    margin-right: 10px;
-    text-decoration: none;
-  }
-  
-  nav a:hover {
-    text-decoration: underline;
-  }
-  /* Headings */
-h1 {
-    font-family: 'Arial', sans-serif;
-    font-size: 36px;
-    color: #2c3e50;
-    margin-top: 20px;
-  }
-  
-  h2, h3, h4, h5, h6 {
-    font-family: 'Arial', sans-serif;
-    color: hsl(0, 3%, 6%);
-  }
-  img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    margin-top: 20px;
-  }
-  @media (max-width: 600px) {
-    nav {
-      flex-direction: column;
-    }
-  
-    nav a {
-      margin: 10px 0;
-      font-size: 18px;
-    }
-  
-    h1 {
-      font-size: 1.5em;
-    }
-  
-    p {
-      font-size: 1em;
-    }
-  }
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  .container2 {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  .container3 {
-    margin-bottom: 40px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #ddd;
-  }
-  .dark-mode {
-    background-color: #121212;
-    color: #f0f0f0;
-  }
-  
-  .dark-mode nav {
-    background-color: #222;
-  }
-  
-  .dark-mode nav a {
-    color: #f0f0f0;
-  }
-  
-  .dark-mode button {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-  }
-  #babylon-container {
-    margin: 20px auto;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-  }
-  
+  background: rgba(255, 255, 255, 0.1); /* semi-transparent white */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  padding: 1rem 2rem;
+  margin: 1rem auto;
+  max-width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 1.5rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #1abc9c;
+}
+
+nav button {
+  background-color: rgba(255, 255, 255, 0.12);
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+nav button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Glass containers */
+.container, .container2, .container3 {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  text-align: center;
+}
+
+/* Headers and text */
+h1, h2 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #f0f0f0;
+}
+
+/* Images */
+img {
+  margin: 0.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+  width: 250px;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+/* Buttons */
+button {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* 3D Viewer */
+#babylon-container {
+  margin-top: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #eee;
+}
+
+body.dark-mode .container,
+body.dark-mode .container2,
+body.dark-mode .container3,
+body.dark-mode nav {
+  background: rgba(255, 255, 255, 0.06);
+  color: #eee;
+}
